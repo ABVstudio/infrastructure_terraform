@@ -16,7 +16,7 @@ resource "aws_eks_cluster" "cluster" {
 resource "aws_eks_node_group" "private-nodes" {
   cluster_name    = aws_eks_cluster.cluster.name
   node_group_name = var.cluster_node_name
-  node_group_name_prefix =var.cluster_node_name 
+  node_group_name_prefix =var.cluster_node_prefix 
   node_role_arn   = aws_iam_role.my_nodes.arn
 
   subnet_ids = module.vpc.public_subnets

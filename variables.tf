@@ -16,6 +16,9 @@ variable "cluster_name"{
 variable cluster_node_name{ 
   default     = "nodes_one"
 }
+variable cluster_node_prefix{
+  default     = "nodes_one_"
+}
 variable vpc_name{
   type        = string
   default     = "lepseyname_vpc_cluster"
