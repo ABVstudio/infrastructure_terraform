@@ -20,3 +20,7 @@ variable vpc_name{
   type        = string
   default     = "lepseyname_vpc_cluster"
 }
+variable "repository_name"{
+  type        = string
+  default     = "lepsey_repository"
+}
