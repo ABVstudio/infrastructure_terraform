@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket                  = "lepseyname-bucket"
     key                     = "123456-1"
-    region                  = var.region
+    region                  = "us-east-1"
     shared_credentials_file = "~/.aws/credentials"
   }
 }
