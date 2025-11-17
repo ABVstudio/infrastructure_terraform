@@ -9,7 +9,7 @@ resource "aws_eks_cluster" "cluster" {
 		endpoint_public_access  = true
 		#vpc_id                  = module.vpc.vpc_id
 
-		subnet_ids = [module.vpc.private_subnets, module.vpc.public_subnets] 
+		subnet_ids = concat(module.vpc.private_subnets, module.vpc.public_subnets)
 	}
 }
 
