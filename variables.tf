@@ -24,3 +24,6 @@ variable "repository_name"{
   type        = string
   default     = "lepsey_repository"
 }
+variable "repository_iam_full"{
+  type        = string
+  default     = "arn:aws:iam::443370672158:user/lepseyname"

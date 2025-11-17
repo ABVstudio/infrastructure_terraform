@@ -22,24 +22,24 @@ resource "aws_eks_node_group" "private-nodes" {
   node_group_name = var.cluster_node_name
   node_role_arn   = aws_iam_role.my_nodes.arn
 
-  subnet_ids = module.vpc.private_subnets
+  subnet_ids = module.vpc.public_subnets
 
   capacity_type  = "ON_DEMAND"
   instance_types = ["t3.small"]
 
   scaling_config {
-    desired_size = 1
-    max_size     = 2
-    min_size     = 1
+    desired_size = 2
+    max_size     = 3
+    min_size     = 2
   }
 
   update_config {
     max_unavailable = 1
   }
 
-  labels = {
-    node = "lepsey_kubenode02"
-  }
+  #labels = {
+  #  node = "lepsey_kubenode02"
+  #}
 
   # taint {
   #   key    = "team"
