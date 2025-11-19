@@ -4,7 +4,11 @@ module "ecr" {
   repository_name = var.repository_name
   repository_read_write_access_arns = [ var.repository_iam_full ]
   repository_image_tag_mutability = "IMMUTABLE_WITH_EXCLUSION"
-  repository_image_tag_mutability_exclusion_filter = ["latest"]
+  repository_image_tag_mutability_exclusion_filter = [{
+              filter      = "latest"
+              #filter_type = string
+      }
+    ]
   repository_lifecycle_policy = jsonencode({
     rules = [
       {
