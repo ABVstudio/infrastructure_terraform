@@ -6,6 +6,7 @@ module "vpc" {
   name = var.vpc_name
   cidr = "10.6.160.0/23"
   map_public_ip_on_launch = "true"
+  disable_api_termination = false
   azs  = slice(data.aws_availability_zones.available.names, 0, 2)
 
   private_subnets = ["10.6.160.0/25", "10.6.160.128/25"]
