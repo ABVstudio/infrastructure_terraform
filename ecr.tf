@@ -1,6 +1,6 @@
 module "ecr" {
   source = "terraform-aws-modules/ecr/aws"
-
+  repository_force_delete = true
   repository_name = var.repository_name
   repository_read_write_access_arns = [ var.repository_iam_full ]
   repository_image_tag_mutability = "IMMUTABLE_WITH_EXCLUSION"
